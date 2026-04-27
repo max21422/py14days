@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-py14days/__init__.py
-py14days/utils.py
-py14days.egg-info/PKG-INFO
-py14days.egg-info/SOURCES.txt
-py14days.egg-info/dependency_links.txt
-py14days.egg-info/top_level.txt
-tests/test_utils.py
