@@ -1,7 +1,7 @@
 import csv
 from pathlib import Path
 
-from day11_csv_tool import read_numeric_column
+from src.commands.csv_cmd import read_numeric_column
 
 
 def test_read_numeric_column(tmp_path: Path):

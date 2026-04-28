@@ -1,6 +1,7 @@
 import math
 
-from stats_utils import mean, median, parse_numbers, stddev_population, summary
+from src.stats_utils import mean, median, parse_numbers, stddev_population, summary
+
 
 
 def test_parse_numbers_commas_and_spaces():
@@ -31,3 +32,7 @@ def test_summary_keys():
     assert info["min"] == 1.0
     assert info["max"] == 3.0
     assert info["mean"] == 2.0
+
+def test_summary_can_disable_sorted():
+    info = summary([3.0, 1.0, 2.0], include_sorted=False)
+    assert "sorted" not in info

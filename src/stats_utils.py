@@ -49,20 +49,24 @@ def stddev_population(nums: list[float]) -> float:
     return math.sqrt(var)
 
 
-def summary(nums: list[float]) -> dict:
+def summary(nums: list[float], include_sorted: bool = True) -> dict:
     """
-    回傳統計摘要（用 dict，方便之後輸出 JSON）
+    回傳統計摘要（用 dict，方便輸出 JSON）
+    include_sorted=False 可避免輸出排序後清單（資料多時很大）
     """
     if len(nums) == 0:
         raise ValueError("nums 不可為空")
 
-    return {
+    result = {
         "count": len(nums),
         "min": min(nums),
         "max": max(nums),
         "mean": mean(nums),
         "median": median(nums),
-        "dddd":"555",
         "stddev_population": stddev_population(nums),
-        "sorted": sorted(nums),
     }
+
+    if include_sorted:
+        result["sorted"] = sorted(nums)
+
+    return result
